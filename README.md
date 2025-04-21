@@ -1,4 +1,4 @@
-# Modern Todo Application
+# Django DRF + Vue Todo Application
 A comprehensive todo application built with Vue.js frontend, Django backend, PostgreSQL database and Nginx as a web server.
 
  <img alt="preview" src="https://raw.githubusercontent.com/mertcan-tas/drf-vue-todo/refs/heads/master/frontend/public/preview.gif" style="width: 100%">
