@@ -32,12 +32,6 @@ docker-compose up --build
 open http://0.0.0.0:8000
 ```
 
-
-The application will be available at:
-- Frontend: http://localhost:8080
-- Backend API: http://localhost:8000
-- Admin panel: http://localhost:8000/admin
-
 ## API Endpoints
 
 ### Authentication
