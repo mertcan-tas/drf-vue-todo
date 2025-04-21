@@ -1,0 +1,384 @@
+type: collection.insomnia.rest/5.0
+name: Todo App
+meta:
+  id: wrk_243fb3eee79046e29810b1de7f812dd6
+  created: 1745157640859
+  modified: 1745157660675
+collection:
+  - name: Auth
+    meta:
+      id: fld_2c6292d6d8a44ddcb2701f0eeee4f7a5
+      created: 1745157669000
+      modified: 1745162812541
+      sortKey: -1745157669075
+    children:
+      - url: "{{ base_url }}/auth/login/"
+        name: Login
+        meta:
+          id: req_14f11c740a7c471384a653dc3161143a
+          created: 1745157673012
+          modified: 1745164378162
+          isPrivate: false
+          sortKey: -1745157673012
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_4a72280d5dab400797a378cc420a4393
+              name: email
+              value: test@test.com
+              disabled: false
+            - id: pair_5e7cddf3ab58452fbba70bed578ca47c
+              name: password
+              value: Test.#23
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/auth/register/"
+        name: Register
+        meta:
+          id: req_aa8a4012fc364316904d6511488f5cfb
+          created: 1745158037259
+          modified: 1745162167107
+          isPrivate: false
+          sortKey: -1745157673112
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_9312da9f6b454cb6a3df61e840cd734c
+              name: email
+              value: test@test.com
+              disabled: false
+            - id: pair_d8e80da39c674f67a6599cfe981c2fac
+              name: password
+              value: Test.#23
+              disabled: false
+            - id: pair_b86ac0141b714b139cdced7232e21290
+              name: password2
+              value: Test.#23
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/auth/token/refresh/"
+        name: Token Refresh
+        meta:
+          id: req_3babbd7032644c82996b38a113d24d55
+          created: 1745158269281
+          modified: 1745162222393
+          isPrivate: false
+          sortKey: -1745157672812
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_89c240d8a3b34f40a03458b28b21dd5e
+              name: refresh
+              value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NjAyNjIxMCwiaWF0IjoxNzQ1MTYyMjEwLCJqdGkiOiIzZmJhOTEyYjczNDI0NTFmOTcxZDcxNzc0NmE2YzI2OSIsInVzZXJfaWQiOiJjNWQ1M2ZlZThhNjdmYzZhNmRkZmM2NGYxZWIwNjgzZSJ9.j1CJ1x34ze2aklwbMl_zsnpJuZs5CEmQQCtrhR6lu6s
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/auth/change-password/"
+        name: Change Password
+        meta:
+          id: req_ad086060b3f14ae5880d1e491f80e0de
+          created: 1745161937034
+          modified: 1745162471607
+          isPrivate: false
+          sortKey: -1745157672712
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_3f24237929244c718b2b47f62a1ee843
+              name: old_password
+              value: Test.#23
+              disabled: false
+            - id: pair_b9b6a0ca32294e0292f15505bbe5d881
+              name: new_password
+              value: Test.*45
+              disabled: false
+            - id: pair_3b95d81acf694163a6ba436541e71140
+              name: new_password2
+              value: Test.*45
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk0NDU5LCJpYXQiOjE3NDUxNjI0NTksImp0aSI6ImQ1NTkyNWFiMjJlNjRiYzBhYWQzNDNhYzVhOTQxMzg2IiwidXNlcl9pZCI6IjI2NzNjMDUwNzA4MTQyZDU5NmYwYjk0OTY4NjQ5MmYwIn0.BKC_F83tXLJ1HgFQwR30Ng0VHPcb1NY2fHvCqsZ2KBs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Todo
+    meta:
+      id: fld_73f6f74f4d45489d933468bbc408fb96
+      created: 1745162798451
+      modified: 1745163766482
+      sortKey: -1745157669050
+    children:
+      - url: "{{base_url}}/todos/"
+        name: All Todos
+        meta:
+          id: req_5732397627b14958a7b1cd235b644526
+          created: 1745161950510
+          modified: 1745163773765
+          isPrivate: false
+          sortKey: -1745162816309
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/todos/"
+        name: Create Todo
+        meta:
+          id: req_6a0c077661e94a609b2416c32542ae5e
+          created: 1745162964453
+          modified: 1745163777758
+          isPrivate: false
+          sortKey: -1745160244710.5
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_9b4e16e9244348f29b33e0b987d38dc9
+              name: memo
+              value: lotem
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/todos/2/"
+        name: Todo Detail
+        meta:
+          id: req_63b9cb54346b4370972b2105a61adcb1
+          created: 1745163426626
+          modified: 1745163787392
+          isPrivate: false
+          sortKey: -1745158958911.25
+        method: GET
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_9b4e16e9244348f29b33e0b987d38dc9
+              name: memo
+              value: lotem
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/todos/1/toggle/"
+        name: Todo Toggle
+        meta:
+          id: req_9bccd0335ec542648266c85632aee4a3
+          created: 1745163500596
+          modified: 1745163792370
+          isPrivate: false
+          sortKey: -1745158316011.625
+        method: PATCH
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_9b4e16e9244348f29b33e0b987d38dc9
+              name: memo
+              value: lotem
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/todos/6/"
+        name: Todo Remove
+        meta:
+          id: req_610c420201574fd0add9a79bb54482bf
+          created: 1745163574095
+          modified: 1745163817953
+          isPrivate: false
+          sortKey: -1745158315911.625
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{base_url}}/todos/2/"
+        name: Todo Update
+        meta:
+          id: req_bed7391604bd4b719271533d1d299476
+          created: 1745163955493
+          modified: 1745164040491
+          isPrivate: false
+          sortKey: -1745157994511.8125
+        method: PATCH
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_0605b69d5e7144f1bf134df872f01919
+              name: memo
+              value: kingff
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk1NzQ0LCJpYXQiOjE3NDUxNjM3NDQsImp0aSI6ImE2M2Q2MmI1MTk3MzQyNmU5ZjkxMDgxODRjNjk1YmNkIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.5wHe8EWzjuV4QtoMSL4N9Zim70uoWHlx_wQ_2kUE9CI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    headers:
+      - id: pair_fe4c3c2f7e1440f7921b94f550dc099a
+        disabled: false
+  - name: User
+    meta:
+      id: fld_0647b7fa77b24a708e76fb4d0b4f8ec1
+      created: 1745164320889
+      modified: 1745164320889
+      sortKey: -1745164320889
+    children:
+      - url: "{{base_url}}/user/detail/"
+        name: New Request
+        meta:
+          id: req_38008671cb464b6e953f67e450bcad20
+          created: 1745164324085
+          modified: 1745164383148
+          isPrivate: false
+          sortKey: -1745164324085
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1NTk2MzY4LCJpYXQiOjE3NDUxNjQzNjgsImp0aSI6ImQ2NjkxZmY0OWE2MDRhNzc5YzBjMjJiM2E1NTAzZGMzIiwidXNlcl9pZCI6IjkwY2NlNmRmOGE2NTkzYTlkMTMwNjMxYzlkNmM1MzYxIn0.TI3DZQra3bj22VhPXABsXlRO4TpYQo-Hug38fY24acM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5a82c2ade1df5c28458f34a0731c4a6b93d32392
+    created: 1745157640861
+    modified: 1745157640861
+environments:
+  name: Base Environment
+  meta:
+    id: env_5a82c2ade1df5c28458f34a0731c4a6b93d32392
+    created: 1745157640860
+    modified: 1745163162801
+    isPrivate: false
+  data:
+    base_url: http://127.0.0.1:8000/api
